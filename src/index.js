@@ -1,11 +1,11 @@
-import  { Notify } from 'notiflix';
+
 import SimpleLightbox from 'simplelightbox';
-// Додатковий імпорт стилів
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import './css/style.css';
-import { refs } from './js/main';
-import { renderGalleryMarkup } from './js/main';
-import { fetchImages } from './js/main';
+import  { Notify } from 'notiflix';
+import './css/styles.css'
+import { refs } from './js/refs';
+import { renderGalleryMarkup } from './js/createmarkup';
+import { fetchImages } from './js/fetchimages';
 
 refs.form.addEventListener('submit', onFormSubmit);
 refs.loadMoreBtn.addEventListener('click', onClickBtnLoadMore);

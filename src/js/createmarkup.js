@@ -1,27 +1,6 @@
+import { refs } from './refs';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import axios from 'axios';
 
-const refs = {
-    form: document.querySelector('.search-form'),
-    searchFormButtonSubmit: document.querySelector('.search-form__submit'),
-    input: document.querySelector('.input'),
-    gallery: document.querySelector('.gallery'),
-    loadMoreBtn: document.querySelector('.load-more'),
-  };
-
-const BASE_URL = 'https://pixabay.com/api/';
-const API_KEY = '34532945-6dd9e50d65c600f2d5972702b';
-
-async function fetchImages(value, page = 1, perPage = 40) {
-  try {
-    const response = await axios.get(
-      `${BASE_URL}?key=${API_KEY}&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=${perPage}`
-    );
-    return response;
-  } catch (error) {
-    console.log(error);
-  }
-}
 export function createGalleryMarkup(images) {
   return images
     .map(
